@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="img/lpu-logo-lovely_professional_university.png" /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Contact Us</h1>
+    </section>
+
+    <section class="location">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.726399109877!2d75.70295481452379!3d31.255996567277286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f5e9c489cf3%3A0x4049a5409d53c300!2sLovely%20Professional%20University!5e0!3m2!1sen!2sin!4v1674491698666!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <h5>
+                Lovely Professional University Jalandhar - Delhi, Grand Trunk
+                Rd1
+              </h5>
+              <p>Phagwara, Punjab 14400</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <span>
+              <h5>01824404404</h5>
+              <p>Monday-Saturday, 9am - 5pm</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-envelope-o"></i>
+            <span>
+              <h5>admissions@lpu.in</h5>
+              <p>Email us your query</p>
+            </span>
+          </div>
+        </div>
+        <div class="contact-col">
+            <form>
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter email address" required>
+                <input type="text" name="subject" placeholder="Enter your subject" required>
+                <textarea rows="8" name="message" placeholder="Message"></textarea>
+                <button type="submit" class="hero-btn red-btn">Send Message</button>
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>
+          A premier academic institution, recognized internationally for its
+          contribution to industry and society through excellence in teaching,
+          learning, <br />research, internationalization, entrepreneurship and
+          leadership.
+        </p>
+        <div class="icons">
+          <a href="https://www.facebook.com/LPUUniversity"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/lpuuniversity"><i class="fa fa-instagram"></i></a>
+          <a href="https://twitter.com/lpuuniversity"><i class="fa fa-twitter"></i></a>
+          <a href=" https://www.linkedin.com/school/lovely-professional-university"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p>Made With <i class="fa fa-heart-o"></i> by Himani Bisht</p>
+      </section>
+
+    <!-- Java script for toggle menu -->
+    <script>
+      var navlinks = document.getElementById("nav-links");
+      function showMenu() {
+        navlinks.style.right = 0;
+      }
+      function hideMenu() {
+        navlinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="img/lpu-logo-lovely_professional_university.png"/></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>About Us</h1>
+
+    </section>
+ 
+    <!-- About us content -->
+    <section class="about-us">
+        <h1>Organization Strucure</h1>
+        <img src="img/Organization-Structure.jpg">
+    </section>
+
+    <!-- ranking -->
+    <section class="rank">
+        <h1>Ranking</h1>
+        <p>Where we stand</p>
+        <img src="img/ranking.jpg">
+    </section>
+    
+    <!-- Vission and mission -->
+    <section class="vision">
+        <h1>Our Vision and Mission</h1>
+        <div class="row">
+          <div class="vision-col">
+            <img src="img/img1.webp">
+            <h3>Vision</h3>
+            <p>To be a premier academic institution, recognized internationally for its contribution to industry and society through excellence in teaching, learning, research, internationalization, entrepreneurship and leadership.</p>
+          </div>
+          <div class="vision-col">
+            <h3>Mission</h3>
+            <ul>
+                <li><i class="fa fa-chevron-right" aria-hidden="true"></i>  To transform education through academic rigour, practical orientation and outcome based teaching.</li>
+                <li><i class="fa fa-chevron-right" aria-hidden="true"></i>  To develop and implement a relationship of cooperation between industry and academia.</li>
+                <li><i class="fa fa-chevron-right" aria-hidden="true"></i>  To undertake impactful research addressing local, national and global challenges.</li>
+                <li><i class="fa fa-chevron-right" aria-hidden="true"></i>  To prepare graduates to be lifelong learners with strong analytical and leadership skills.</li>
+                <li><i class="fa fa-chevron-right" aria-hidden="true"></i>  To develop global professionals and entrepreneurs with innovative spirit, tolerance and desire to make a difference to the society.
+                </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="icons">
+          <a href="https://www.facebook.com/LPUUniversity"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/lpuuniversity"><i class="fa fa-instagram"></i></a>
+          <a href="https://twitter.com/lpuuniversity"><i class="fa fa-twitter"></i></a>
+          <a href=" https://www.linkedin.com/school/lovely-professional-university"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <p>Made With <i class="fa fa-heart-o"></i> by Himani Bisht</p>
+      </section>
+
+    <!-- Java script for toggle menu -->
+    <script>
+        var navlinks = document.getElementById("nav-links");
+        function showMenu(){
+            navlinks.style.right = 0;
+        }
+        function hideMenu(){
+            navlinks.style.right = '-200px';
+        }
+    </script>
+</body>
+</html>

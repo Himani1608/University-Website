@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"
+          ><img src="img/lpu-logo-lovely_professional_university.png"
+        /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </section>
+
+    <!-- Courses -->
+
+    <section class = "courses">
+        <h1>Courses We Offer</h1>
+        <p>There are a wide varities of courses offered by our university</p>
+        <div class="row">
+            <div class="courses-col">
+                <h3>After 12th(UNDERGRADUATE) Programmes</h3>
+                <p>Undergraduate education is the post-secondary education previous to the postgraduate education. It includes all the academic programs up to the level of a bachelor's degree</p>
+                <a href="https://www.lpu.in/programmes/all/12th" class="know"> Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="courses-col">
+                <h3>After Graduation(POST GRADUATE) Programmes</h3>
+                <p>A postgraduate degree is a higher-level qualification that will further develop your knowledge in a particular subject area. You usually have to have completed an undergraduate degree before you can continue on to postgraduate study.Postgraduate study is typically divided into two broad areas; taught and research programmes.</p>
+                <a href= "https://www.lpu.in/programmes/all/Graduation" class="know">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="courses-col">
+                <h3>DOCTORAL Programmes</h3>
+                <p>A doctoral degree is the highest degree a person can earn in their field. Most people who pursue them already have a master's degree, but some doctoral programs allow students to enter after receiving a bachelor's degree, combining the doctorate and master’s programs to save time.</p>
+                <a href= "https://nest.lpu.in/phd/index.php" class="know">Know More <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="facilities">
+      <h1>Distance Courses</h1>
+      <div class="row">
+        <div class="facilities-col">
+          <img src="img/management.jpg" />
+          <h3>MANAGEMENT</h3>
+          <p>
+            Management programmes are aimed at developing analytical and leadership skills among the prospective managers. It provides sufficient flexibility to students to fulfill their professional commitments alongside their study.
+          </p>
+        </div>
+        <div class="facilities-col">
+          <img src="img/cse.jpg" />
+          <h3>COMPUTER APPLICATIONS (CA) OR INFORMATION TECHNOLOGY (IT)</h3>
+          <p>
+            These programmes aim at providing comprehensive knowledge of fundamental concepts of computer system with full insights about important trends of CA/IT, enabling them to sharpen their technical skills.
+          </p>
+        </div>
+        <div class="facilities-col">
+          <img src="img/commerce.jpg" />
+          <h3>COMMERCE</h3>
+          <p>
+            Commerce Education lays the foundation for a successful career in many aspects of modern commercial organizations. The programmes under this discipline have been designed to meet the needs of the students who wish to acquire in-depth knowledge and make career in field of commerce.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="facilities-col-row2">
+            <img src="img/arts.jpg" />
+            <h3>ARTS</h3>
+            <p>
+              The varied nature of Arts programme offered through LPU DE is in line with the varied interests and aspirations of Distance Education students. These programmes are designed to make you a successful Mathematician, Economist, Sociologist, Educationalist, Historian, Political Scientist or Linguist.
+            </p>
+        </div>
+        <div class="facilities-col-row2">
+            <img src="img/library.jpg" />
+            <h3>LIBRARY AND INFORMATION SCIENCES</h3>
+            <p>
+              These programmes aim to educate students in the philosophy of librarianship, basic principles, fundamental laws, professional ethics and basic knowledge of computer and its applications in the field of library and information sciences.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!--Call to action-->
+
+    <section class="cta">
+      <h1>
+        Enroll For Our Various Online Courses<br />Anywhere From The World
+      </h1>
+      <a href="#" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="icons">
+        <a href="https://www.facebook.com/LPUUniversity"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/lpuuniversity"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/lpuuniversity"><i class="fa fa-twitter"></i></a>
+        <a href=" https://www.linkedin.com/school/lovely-professional-university"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <p>Made With <i class="fa fa-heart-o"></i> by Himani Bisht</p>
+    </section>
+
+    <!-- Java script for toggle menu -->
+    <script>
+      var navlinks = document.getElementById("nav-links");
+      function showMenu() {
+        navlinks.style.right = 0;
+      }
+      function hideMenu() {
+        navlinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
