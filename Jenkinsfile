@@ -28,13 +28,13 @@ pipeline {
                 sh "sudo docker run -it -p 287:80 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}"
             }
         }
-        stage('Docker login and push') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
-                    sh "echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin"
-                    sh "sudo docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest"
-                    }
-               }
-        }
+//         stage('Docker login and push') {
+//             steps {
+//                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+//                     sh "echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin"
+//                     sh "sudo docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest"
+//                     }
+//                }
+//         }
     }
 }
