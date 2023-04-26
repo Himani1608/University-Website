@@ -34,7 +34,7 @@ pipeline {
         stage('Login and push') {
             steps {
                 sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-                sh "sudo docker push ${IMAGE_NAME}"
+                sh "sudo docker push ${DOCKERHUB_IMAGE}"
             }
         }
     }
