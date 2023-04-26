@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
 //         PORT = "85"
-        DOCKERHUB_CREDENTIAL_ID = "dockerhub"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         IMAGE_NAME = "devops-project-image"
         CONTAINER_NAME = "devops-project"
         GIT_REPO = "https://github.com/Himani1608/University-website.git"
@@ -28,13 +28,15 @@ pipeline {
                 sh "sudo docker run -it -p 287:80 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}"
             }
         }
-//         stage('Docker login and push') {
-//             steps {
-//                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
-//                     sh "echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin"
-//                     sh "sudo docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest"
-//                     }
-//                }
-//         }
+        stage('Login') {
+            steps {
+                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+            }
+        }
+        stage('Push') {
+            steps {
+                sh "docker push ${IMAGE_NAME}"
+            }
+        }
     }
 }
