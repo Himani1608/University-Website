@@ -21,6 +21,7 @@ pipeline {
                     sh "sudo docker kill ${CONTAINER_NAME}|| true"
                     sh "sudo docker rm ${CONTAINER_NAME}|| true"
                     sh "sudo docker build . -t ${IMAGE_NAME}"
+                    sh "sudo build . -t ${DOCKERHUB_IMAGE}"
                 }
             }
         }
@@ -32,7 +33,6 @@ pipeline {
         stage('Login and push') {
             steps {
                 sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-                sh "sudo build . -t ${DOCKERHUB_IMAGE}"
                 sh "sudo docker push ${IMAGE_NAME}"
             }
         }
