@@ -18,6 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    sh "sudo docker logout"
                     sh "sudo docker kill ${CONTAINER_NAME}|| true"
                     sh "sudo docker rm ${CONTAINER_NAME}|| true"
                     sh "sudo docker build . -t ${IMAGE_NAME}"
@@ -38,11 +39,6 @@ pipeline {
             steps {
                 sh "sudo docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_REPO}"
                 sh "docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
-            }
-        }
-        post {
-            always {
-                sh 'docker logout'
             }
         }
     }
