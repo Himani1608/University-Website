@@ -18,6 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    sh "sudo docker logout"
                     sh "sudo docker kill ${CONTAINER_NAME}|| true"
                     sh "sudo docker rm ${CONTAINER_NAME}|| true"
                     sh "sudo docker build . -t ${IMAGE_NAME}"
