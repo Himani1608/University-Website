@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-//         PORT = "85"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         DOCKER_REPO = "himanibisht/ubuntu"
+        IMG = "himanibisht/devops-project-image"
         IMAGE_NAME = "himanibisht/devops-project-image"
         CONTAINER_NAME = "devops-project"
         GIT_REPO = "https://github.com/Himani1608/University-website.git"
@@ -39,6 +39,12 @@ pipeline {
             steps {
                 sh "sudo docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_REPO}:${BUILD_NUMBER}"
                 sh "docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
+            }
+        }
+         stage('Clear Image'){
+            steps {
+                sh "sudo docker rmi ${IMG}:${BUILD_NUMBER.toInteger()-1}"
+                sh "sudo docker rmi -f ${DOCKERHUB_REPO}:${BUILD_NUMBER}"
             }
         }
     }
