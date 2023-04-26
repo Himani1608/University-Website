@@ -29,22 +29,21 @@ pipeline {
                 sh "sudo docker run -it -p 100:80 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}"
             }
         }
-    stage('Login') {
-      steps {
-        sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-      }
-    }
-    stage('Push') {
-      steps {
-          sh "sudo docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_REPO}"
-          sh "docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
-      }
-    }
-  }
-  post {
-    always {
-      sh 'docker logout'
-    }
-  }
+        stage('Login') {
+            steps {
+                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+            }
+        }
+        stage('Push') {
+            steps {
+                sh "sudo docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_REPO}"
+                sh "docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
+            }
+        }
+        post {
+            always {
+                sh 'docker logout'
+            }
+        }
     }
 }
