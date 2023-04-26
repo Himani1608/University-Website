@@ -21,7 +21,7 @@ pipeline {
                     sh "sudo docker kill ${CONTAINER_NAME}|| true"
                     sh "sudo docker rm ${CONTAINER_NAME}|| true"
                     sh "sudo docker build . -t ${IMAGE_NAME}"
-                    sh "sudo build . -t ${DOCKERHUB_IMAGE}"
+                    sh "sudo docker build . -t ${DOCKERHUB_IMAGE}"
                 }
             }
         }
