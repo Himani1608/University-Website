@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
 //         PORT = "85"
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub2')
         DOCKERHUB_IMAGE= "himanibisht/devops-project"
         IMAGE_NAME = "devops-project-image"
         CONTAINER_NAME = "devops-project"
