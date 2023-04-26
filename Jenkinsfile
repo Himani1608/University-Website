@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh "docker push ${IMAGE_NAME}"
+                sh "sudo docker push ${IMAGE_NAME}"
             }
         }
     }
