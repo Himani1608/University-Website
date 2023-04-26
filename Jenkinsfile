@@ -21,13 +21,13 @@ pipeline {
                     sh "sudo docker logout"
                     sh "sudo docker kill ${CONTAINER_NAME}|| true"
                     sh "sudo docker rm ${CONTAINER_NAME}|| true"
-                    sh "sudo docker build . -t ${IMAGE_NAME}"
+                    sh "sudo docker build . -t ${IMAGE_NAME}${BUILD_NUMBER}""
                 }
             }
         }
         stage('Deploy Docker Image') {
             steps {
-                sh "sudo docker run -it -p 100:80 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}"
+                sh "sudo docker run -it -p 100:80 --name ${CONTAINER_NAME} -d ${IMAGE_NAME}${BUILD_NUMBER}""
             }
         }
         stage('Login') {
