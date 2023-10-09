@@ -38,7 +38,7 @@ pipeline {
         stage('Push') {
             steps {
                 sh "sudo docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_REPO}:${BUILD_NUMBER}"
-                sh "docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
+                sh "sudo docker push ${DOCKER_REPO}:${BUILD_NUMBER}"
             }
         }
          stage('Clear Image'){
